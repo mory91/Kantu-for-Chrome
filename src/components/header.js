@@ -40,12 +40,12 @@ class Header extends React.Component {
 
     if (hasUnsaved) {
       return Modal.confirm({
-        title: 'Unsaved changes',
-        content: 'Do you want to discard the unsaved changes?',
-        okText: 'Discard',
-        cancelText: 'Cancel',
+        title: 'تغییرات ذخیره نشده',
+        content: 'میخواهی تغییرات ذخیره شده را از دست بدهی؟',
+        okText: 'بله',
+        cancelText: 'نه',
         onOk: go,
-        onCancel: () => {}
+        onCancel: () => { }
       })
     }
 
@@ -236,9 +236,9 @@ class Header extends React.Component {
   renderPlayLoopModal () {
     return (
       <Modal
-        title="How many loops to play?"
-        okText="Play"
-        cancelText="Cancel"
+        title="چند دور اجرا شود؟"
+        okText="اجرا"
+        cancelText="خارج شو"
         className="play-loop-modal"
         visible={this.state.showPlayLoops}
         onOk={this.onClickPlayLoops}
@@ -246,7 +246,7 @@ class Header extends React.Component {
       >
         <Row>
           <Col span={10}>
-            <Form.Item label="Start value">
+            <Form.Item label="مقدار ابتدایی">
               <Input
                 type="number"
                 min="0"
@@ -257,7 +257,7 @@ class Header extends React.Component {
             </Form.Item>
           </Col>
           <Col span={10} offset={2}>
-            <Form.Item label="Max">
+            <Form.Item label="بیشینه">
               <Input
                 type="number"
                 min="0"
@@ -310,7 +310,7 @@ class Header extends React.Component {
 
     return (
       <Modal
-        title="Settings"
+        title="تنظیمات"
         className="settings-modal"
         width={500}
         footer={null}
@@ -318,21 +318,21 @@ class Header extends React.Component {
         onCancel={() => this.setState({ showReplaySettings: false })}
       >
         <Tabs>
-          <Tabs.TabPane tab="Replay / Record" key="replay">
+          <Tabs.TabPane tab="بازپخش / ضبط" key="replay">
             <Form>
               <Form.Item label="Replay Helper" {...displayConfig}>
                 <Checkbox
                   onChange={(e) => onConfigChange('playScrollElementsIntoView', e.target.checked)}
                   checked={this.props.config.playScrollElementsIntoView}
                 >
-                  Scroll elements into view during replay
+                  هنگام اجرا ببر سمت المان
                 </Checkbox>
 
                 <Checkbox
                   onChange={(e) => onConfigChange('playHighlightElements', e.target.checked)}
                   checked={this.props.config.playHighlightElements}
                 >
-                  Highlight elements during replay
+                  المان ها را پر رنگ کن
                 </Checkbox>
               </Form.Item>
 
@@ -344,13 +344,13 @@ class Header extends React.Component {
                   onChange={val => onConfigChange('playCommandInterval', val)}
                 >
                   <Select.Option value={'0'}>
-                    Fast (no delay)
+                    بی وقفه
                   </Select.Option>
                   <Select.Option value={'0.3'}>
-                    Medium (0.3s delay)
+                    با ۰٫۳ ثانیه وقفه
                   </Select.Option>
                   <Select.Option value={'2'}>
-                    Slow (2s delay)
+                    با ۲ ثانیه وقفه
                   </Select.Option>
                 </Select>
               </Form.Item>
@@ -388,24 +388,24 @@ class Header extends React.Component {
                 />
               </Form.Item>
 
-              <Form.Item label="Record Settings" {...displayConfig}>
+              <Form.Item label="تنظیمات ضبط" {...displayConfig}>
                 <Checkbox
                   onChange={(e) => onConfigChange('recordNotification', e.target.checked)}
                   checked={this.props.config.recordNotification}
                 >
-                  Record notifications
+                  نوتیفیکیشن ضبط
                 </Checkbox>
               </Form.Item>
             </Form>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="General" key="backup" className="backup-pane">
-            <h4>Automatic Backup</h4>
+          <Tabs.TabPane tab="کلی" key="backup" className="backup-pane">
+            <h4>بکاپ خودکار</h4>
             <div className="row">
               <Checkbox
                 onChange={(e) => onConfigChange('enableAutoBackup', e.target.checked)}
                 checked={this.props.config.enableAutoBackup}
               />
-              <span>Show backup reminder every</span>
+              <span>هر بازه زمانی بکاپ را یاداور شو</span>
               <Input
                 type="number"
                 min={1}
@@ -414,48 +414,48 @@ class Header extends React.Component {
                 onChange={(e) => onConfigChange('autoBackupInterval', e.target.value)}
                 style={{ width: '40px' }}
               />
-              <span> days</span>
+              <span> روز</span>
             </div>
             <div className="row">
-                <p>Backup includes</p>
+                <p>بکاپ شامل:</p>
                 <ul>
                   <li>
                     <Checkbox
                       onChange={(e) => onConfigChange('autoBackupTestCases', e.target.checked)}
                       checked={this.props.config.autoBackupTestCases}
                     />
-                    <span>Test cases</span>
+                    <span>تست کیس</span>
                   </li>
                   <li>
                     <Checkbox
                       onChange={(e) => onConfigChange('autoBackupTestSuites', e.target.checked)}
                       checked={this.props.config.autoBackupTestSuites}
                     />
-                    <span>Test suites</span>
+                    <span>یک دسته تست</span>
                   </li>
                   <li>
                     <Checkbox
                       onChange={(e) => onConfigChange('autoBackupScreenshots', e.target.checked)}
                       checked={this.props.config.autoBackupScreenshots}
                     />
-                    <span>Screenshots</span>
+                    <span>اسکرین شات</span>
                   </li>
                   <li>
                     <Checkbox
                       onChange={(e) => onConfigChange('autoBackupCSVFiles', e.target.checked)}
                       checked={this.props.config.autoBackupCSVFiles}
                     />
-                    <span>CSV files</span>
+                    <span>CSV فایل های</span>
                   </li>
                 </ul>
             </div>
             <div className="row">
-              <span>And you can also </span>
+              <span>همچنین میتوانی</span>
               <Button
                 type="primary"
                 onClick={() => this.props.runBackup()}
               >
-                Run backup now
+                بکاپ را اکنون اجرا کنی
               </Button>
             </div>
           </Tabs.TabPane>
@@ -551,7 +551,7 @@ class Header extends React.Component {
     const playMenu = (
       <Menu onClick={onClickMenuItem} selectable={false}>
         <Menu.Item key="play_loop" disabled={false}>
-          Play loop..
+          اجرای حلقه...
         </Menu.Item>
       </Menu>
     )
@@ -563,7 +563,7 @@ class Header extends React.Component {
             onClick={this.onToggleRecord}
             style={{ color: '#ff0000' }}
           >
-            <span>Stop Record</span>
+            <span>نگه داشتن ضبط</span>
           </Button>
         </div>
       )
@@ -575,10 +575,10 @@ class Header extends React.Component {
           <div className="actions">
             <Button.Group>
               <Button onClick={() => this.getPlayer().stop()}>
-                <span>Stop</span>
+                <span>نگه داشتن</span>
               </Button>
               <Button onClick={() => this.getPlayer().pause()}>
-                <span>Pause</span>
+                <span>ایستادن</span>
               </Button>
             </Button.Group>
           </div>
@@ -590,10 +590,10 @@ class Header extends React.Component {
           <div className="actions">
             <Button.Group>
               <Button onClick={() => this.getPlayer().stop()}>
-                <span>Stop</span>
+                <span>نگه داشتن</span>
               </Button>
               <Button onClick={() => this.getPlayer().resume()}>
-                <span>Resume</span>
+                <span>ادامه</span>
               </Button>
             </Button.Group>
           </div>
@@ -606,13 +606,13 @@ class Header extends React.Component {
             <Button
               onClick={this.onToggleRecord}
             >
-              <span>Record</span>
+              <span>ضبط</span>
             </Button>
 
             <Button.Group className="play-actions">
-              <Button onClick={this.playCurrentLine}>Step</Button>
+              <Button onClick={this.playCurrentLine}>یک قدم</Button>
               <Dropdown.Button onClick={this.playCurrentMacro} overlay={playMenu}>
-                <span>Play Macro</span>
+                <span>اجرای ماکرو</span>
               </Dropdown.Button>
             </Button.Group>
 
@@ -632,7 +632,7 @@ class Header extends React.Component {
     const klass = hasUnsaved ? 'unsaved' : ''
 
     const saveBtnState    = {
-      text: src ? 'Save' : 'Save..',
+      text: src ? 'ذخیره' : 'ذخیره..',
       disabled: !hasUnsaved
     }
 

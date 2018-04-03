@@ -51,10 +51,10 @@ class App extends Component {
     return (
       <div className="app with-sidebar" ref={el => { this.$app = el }}>
         <div className="backup-alert">
-          <span>Do you want to run the automated backup?</span>
+          <span>می خواهی بکاپ خودکار پخش شود؟</span>
           <span className="backup-actions">
-            <Button type="primary" onClick={this.onClickBackup}>Yes</Button>
-            <Button onClick={this.onClickNoBackup}>No</Button>
+            <Button type="primary" onClick={this.onClickBackup}>بله</Button>
+            <Button onClick={this.onClickNoBackup}>خیر</Button>
           </span>
         </div>
         <div className="app-inner">

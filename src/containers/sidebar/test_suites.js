@@ -190,8 +190,8 @@ class SidebarTestSuites extends React.Component {
 
       case 'delete':
         Modal.confirm({
-          title: 'Are your sure to delete this test suite?',
-          okText: 'Confirm',
+          title: 'مطمینی میخواهی این سویت تست را پاک کنی؟',
+          okText: 'موافقت',
           onOk: () => this.props.removeTestSuite(ts.id)
         })
         break
@@ -420,9 +420,9 @@ class SidebarTestSuites extends React.Component {
 
     return (
       <Menu onClick={onClickMenuItem} selectable={false}>
-        <Menu.Item key="export_all">Export all (JSON)</Menu.Item>
+        <Menu.Item key="export_all">JSON خروجی به صورت</Menu.Item>
         <Menu.Item key="4">
-          <label htmlFor="select_json_files">Import JSON</label>
+          <label htmlFor="select_json_files">JSON ورودی</label>
           <input
             multiple
             type="file"
@@ -463,7 +463,7 @@ class SidebarTestSuites extends React.Component {
     return (
       <div>
         <div className="test-suite-actions">
-          <Button type="primary" onClick={this.addTestSuite}>+ Test Suite</Button>
+          <Button type="primary" onClick={this.addTestSuite}>+ سوییت تست</Button>
           <Button type="default" onClick={this.foldAllTestSuites}>Fold</Button>
           <Dropdown overlay={this.renderTestSuiteMenu()} trigger={['click']}>
             <Button shape="circle">

@@ -40,10 +40,10 @@ class Sidebar extends React.Component {
 
       if (hasUnsaved) {
         return Modal.confirm({
-          title: 'Unsaved changes',
-          content: 'Do you want to discard the unsaved changes?',
-          okText: 'Discard',
-          cancelText: 'Cancel',
+          title: 'تغییرات ذخیره نشده',
+          content: 'میخواهی تغییرات ذخیره شده را از دست بدهی؟',
+          okText: 'بله',
+          cancelText: 'نه',
           onOk: go,
           onCancel: () => { resolve(false) }
         })

@@ -354,10 +354,10 @@ class DashboardEditor extends React.Component {
           <Menu.Item key="copy">Copy</Menu.Item>
           <Menu.Item key="paste" disabled={clipboard.commands.length === 0}>Paste</Menu.Item>
           <Menu.Divider />
-          <Menu.Item key="insert">Insert new line</Menu.Item>
+          <Menu.Item key="insert">خط جدید وارد کن</Menu.Item>
           <Menu.Divider />
-          <Menu.Item key="run_line">Execute this command</Menu.Item>
-          <Menu.Item key="rune_from_here">Run from here</Menu.Item>
+          <Menu.Item key="run_line">این دستور را اجرا کن</Menu.Item>
+          <Menu.Item key="rune_from_here">از این جا اجرا کن</Menu.Item>
         </Menu>
       </div>
     )
@@ -375,11 +375,11 @@ class DashboardEditor extends React.Component {
     const editable      = this.isPlayerStopped()
 
     const columns = [
-      { title: 'Command',  dataIndex: 'cmd',      key: 'cmd',     width: 130 },
-      { title: 'Target',   dataIndex: 'target',   key: 'target',  width: 190 },
-      { title: 'Value',    dataIndex: 'value',    key: 'value' },
+      { title: 'دستور',  dataIndex: 'cmd',      key: 'cmd',     width: 130 },
+      { title: 'هدف',   dataIndex: 'target',   key: 'target',  width: 190 },
+      { title: 'مقدار',    dataIndex: 'value',    key: 'value' },
       {
-        title: 'Ops',
+        title: 'اضافه',
         key: 'ops',
         width: 80,
         render: (text, record, index) => {
@@ -413,7 +413,7 @@ class DashboardEditor extends React.Component {
         <div className="table-footer" onClick={(e) => {
           this.props.insertCommand(newCommand, commands.length)
         }}>
-          Add
+          اضافه کردن
         </div>
       ),
       onRowClick: (record, index, e) => {
@@ -469,7 +469,7 @@ class DashboardEditor extends React.Component {
 
             <div className="form-group fields-wrapper" style={{ marginBottom: 0 }}>
               <Form>
-                <Form.Item label="Command" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }}>
+                <Form.Item label="دستور" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }}>
                   <Select
                     showSearch
                     optionFilterProp="children"
@@ -488,11 +488,11 @@ class DashboardEditor extends React.Component {
                   </Select>
                   {selectedCmd && selectedCmd.cmd ? (
                     <a href={`https://a9t9.com/x/idehelp?cmd=${selectedCmd.cmd.toLowerCase()}`} target="_blank">
-                      Info for this command
+                      اطلاعات این دستور
                     </a>
                   ) : null}
                 </Form.Item>
-                <Form.Item label="Target" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }}>
+                <Form.Item label="هدف" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }}>
                   <div>
                     {!selectedCmd || !selectedCmd.targetOptions ||
                       !selectedCmd.targetOptions.length ? (
@@ -526,17 +526,17 @@ class DashboardEditor extends React.Component {
                       disabled={!isCmdEditable}
                       onClick={this.onToggleInspect}
                     >
-                      {isInspecting ? (<span>Cancel</span>) : (<span>Select</span>)}
+                      {isInspecting ? (<span>خروج</span>) : (<span>انتخاب</span>)}
                     </Button>
                     <Button
                       disabled={!isCmdEditable}
                       onClick={this.onClickFind}
                     >
-                      Find
+                      پیدا کن
                     </Button>
                   </div>
                 </Form.Item>
-                <Form.Item label="Value" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }} style={{ marginBottom: 0 }}>
+                <Form.Item label="مقدار" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }} style={{ marginBottom: 0 }}>
                   <Input
                     disabled={!isCmdEditable}
                     value={selectedCmd && selectedCmd.value}

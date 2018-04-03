@@ -14,10 +14,6 @@ class Dashboard extends React.Component {
       <div className="dashboard">
         <DashboardEditor />
         <DashboardBottom />
-
-        <div className="online-help">
-          <a href="https://a9t9.com/kantu/web-automation/chrome/#docs" target="_blank">Kantu for Chrome - Homepage & Docs</a>
-        </div>
       </div>
     )
   }

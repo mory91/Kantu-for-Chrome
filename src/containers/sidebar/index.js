@@ -63,10 +63,10 @@ class Sidebar extends React.Component {
       >
         <div className="sidebar-inner">
           <Tabs defaultActiveKey="test_cases">
-            <Tabs.TabPane tab="Test Cases" key="test_cases">
+            <Tabs.TabPane tab="تست کیس ها" key="test_cases">
               <SidebarTestCases />
             </Tabs.TabPane>
-            <Tabs.TabPane tab="Test Suites" key="test_suites">
+            <Tabs.TabPane tab="تست سویت ها" key="test_suites">
               <SidebarTestSuites />
             </Tabs.TabPane>
           </Tabs>

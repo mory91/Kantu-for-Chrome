@@ -156,10 +156,10 @@ class SidebarTestCases extends React.Component {
 
       if (hasUnsaved) {
         return Modal.confirm({
-          title: 'Unsaved changes',
-          content: 'Do you want to discard the unsaved changes?',
-          okText: 'Discard',
-          cancelText: 'Cancel',
+          title: 'تغییرات ذخیره نشده',
+          content: 'میخواهی تغییرات ذخیره شده را از دست بدهی؟',
+          okText: 'بله',
+          cancelText: 'نه',
           onOk: go,
           onCancel: () => { resolve(false) }
         })
@@ -271,12 +271,12 @@ class SidebarTestCases extends React.Component {
 
     if (hasUnsaved) {
       return Modal.confirm({
-        title: 'Unsaved changes',
-        content: 'Do you want to discard the unsaved changes?',
-        okText: 'Discard',
-        cancelText: 'Cancel',
+        title: 'تغییرات ذخیره نشده',
+        content: 'میخواهی تغییرات ذخیره شده را از دست بدهی؟',
+        okText: 'بله',
+        cancelText: 'نه',
         onOk: go,
-        onCancel: () => {}
+        onCancel: () => { }
       })
     }
 
@@ -338,10 +338,10 @@ class SidebarTestCases extends React.Component {
         }
 
         return Modal.confirm({
-          title: 'Sure to delete?',
-          content: `Do you really want to delete "${tc.name}"?`,
-          okText: 'Delete',
-          cancelText: 'Cancel',
+          title: 'میخواهی پاک کنی؟',
+          content: `مطمینی میخواهی پاک کنی "${tc.name}"?`,
+          okText: 'پاک کن',
+          cancelText: 'نه',
           onOk: go,
           onCancel: () => {}
         })
@@ -508,9 +508,9 @@ class SidebarTestCases extends React.Component {
   renderDuplicateModal () {
     return (
       <Modal
-        title="Duplicate Test Case.."
-        okText="Save"
-        cancelText="Cancel"
+        title="تست تکراری.."
+        okText="ذخیره"
+        cancelText="خیر"
         visible={this.state.showDuplicate}
         onOk={this.onClickDuplicate}
         onCancel={this.onCancelDuplicate}
@@ -531,9 +531,9 @@ class SidebarTestCases extends React.Component {
   renderRenameModal () {
     return (
       <Modal
-        title="Rename the test case as.."
-        okText="Save"
-        cancelText="Cancel"
+        title="تست کیس را به عنوان ... دوباره نام گذاری کن"
+        okText="ذخیره"
+        cancelText="خروج"
         visible={this.state.showRename}
         onOk={this.onClickRename}
         onCancel={this.onCancelRename}
@@ -555,7 +555,7 @@ class SidebarTestCases extends React.Component {
     return (
       <div>
         <div className="test-case-actions">
-          <Button type="primary" onClick={this.addTestCase}>+ Test Case</Button>
+          <Button type="primary" onClick={this.addTestCase}>+ تست کیس</Button>
           <Dropdown overlay={this.renderTestCaseMenu()} trigger={['click']}>
             <Button shape="circle">
               <Icon type="setting" />

@@ -187,8 +187,8 @@ class DashboardBottom extends React.Component {
               </a>
 
               <Popconfirm
-                title="Sure to delete?"
-                okText="Delete"
+                title="مطمینی؟"
+                okText="آره"
                 onConfirm={() => { this.removeCSV(csv) }}
               >
                 <Button
