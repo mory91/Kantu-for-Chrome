@@ -320,7 +320,7 @@ class Header extends React.Component {
         <Tabs>
           <Tabs.TabPane tab="بازپخش / ضبط" key="replay">
             <Form>
-              <Form.Item label="Replay Helper" {...displayConfig}>
+              <Form.Item label="کمک های اجرای دوباره" {...displayConfig}>
                 <Checkbox
                   onChange={(e) => onConfigChange('playScrollElementsIntoView', e.target.checked)}
                   checked={this.props.config.playScrollElementsIntoView}
@@ -336,7 +336,7 @@ class Header extends React.Component {
                 </Checkbox>
               </Form.Item>
 
-              <Form.Item label="Command Interval" {...displayConfig}>
+              <Form.Item label="دوره ی دستورات  " {...displayConfig}>
                 <Select
                   style={{ width: '200px' }}
                   placeholder="interval"

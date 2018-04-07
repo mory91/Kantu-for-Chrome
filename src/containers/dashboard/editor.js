@@ -462,7 +462,7 @@ class DashboardEditor extends React.Component {
           activeKey={this.state.activeTabForCommands}
           onChange={this.onChangeCommandsView}
         >
-          <Tabs.TabPane tab="Table View" key="table_view">
+          <Tabs.TabPane tab="دید جدولی" key="table_view">
             <div className="form-group table-wrapper" style={{ marginBottom: 0 }}>
               {this.renderTable()}
             </div>
@@ -548,7 +548,7 @@ class DashboardEditor extends React.Component {
               </Form>
             </div>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="Source View (JSON)" key="source_view">
+          <Tabs.TabPane tab="دید کد" key="source_view">
             <pre className="source-error">{this.state.sourceErrMsg}</pre>
             {/*
               Note: have to use UnControlled CodeMirror, and thus have to use two state :

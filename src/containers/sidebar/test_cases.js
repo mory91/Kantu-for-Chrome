@@ -430,13 +430,13 @@ class SidebarTestCases extends React.Component {
             mode="vertical"
             selectable={false}
           >
-            <Menu.Item key="play">Play</Menu.Item>
-            <Menu.Item key="rename">Rename..</Menu.Item>
-            <Menu.Item key="duplicate">Duplicate..</Menu.Item>
-            <Menu.Item key="export_json">Export as JSON</Menu.Item>
-            <Menu.Item key="export_html">Export as HTML (old)</Menu.Item>
+            <Menu.Item key="play">احرا</Menu.Item>
+            <Menu.Item key="rename">اسم گذاری دوباره</Menu.Item>
+            <Menu.Item key="duplicate">تکثیر</Menu.Item>
+            <Menu.Item key="export_json">خروجی JSON</Menu.Item>
+            <Menu.Item key="export_html">خروجی HTML</Menu.Item>
             <Menu.Divider></Menu.Divider>
-            <Menu.Item key="delete">Delete</Menu.Item>
+            <Menu.Item key="delete">پاک کردن</Menu.Item>
           </Menu>
         </ClickOutside>
       </div>
@@ -476,9 +476,9 @@ class SidebarTestCases extends React.Component {
 
     return (
       <Menu onClick={onClickMenuItem} selectable={false}>
-        <Menu.Item key="export_all_json">Export All (JSON)</Menu.Item>
+        <Menu.Item key="export_all_json">خروجی همه (JSON)</Menu.Item>
         <Menu.Item key="import_json">
-          <label htmlFor="select_json_files">Import JSON</label>
+          <label htmlFor="select_json_files">ورود JSON</label>
           <input
             multiple
             type="file"
@@ -490,7 +490,7 @@ class SidebarTestCases extends React.Component {
           />
         </Menu.Item>
         <Menu.Item key="import_html">
-          <label htmlFor="select_html_files">Import HTML (old)</label>
+          <label htmlFor="select_html_files">ورودی HTML</label>
           <input
             multiple
             type="file"

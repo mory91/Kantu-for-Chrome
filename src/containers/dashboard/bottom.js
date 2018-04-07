@@ -252,7 +252,7 @@ class DashboardBottom extends React.Component {
           type="card"
           onChange={key => this.setState({ activeTabForLogScreenshot: key })}
         >
-          <Tabs.TabPane tab="Logs" key="Logs">
+          <Tabs.TabPane tab="لاگ ها" key="Logs">
             <ul className="log-content">
               {logs.map((log, i) => (
                 <li className={log.type} key={i}>
@@ -262,7 +262,7 @@ class DashboardBottom extends React.Component {
               ))}
             </ul>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="Screenshots" key="Screenshots">
+          <Tabs.TabPane tab="اسکرین شات" key="Screenshots">
             <ul className="screenshot-content">
               {this.props.screenshots.map((ss, i) => (
                 <li key={ss.url}>
@@ -276,7 +276,7 @@ class DashboardBottom extends React.Component {
               ))}
             </ul>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="CSV" key="CSV">
+          <Tabs.TabPane tab="CSV فرمت" key="CSV">
             <div className="csv-content">
               {this.renderCSVTable()}
             </div>
@@ -292,16 +292,16 @@ class DashboardBottom extends React.Component {
                 style={{ width: '70px', marginRight: '10px' }}
                 size="small"
               >
-                <Select.Option value='All'>All</Select.Option>
-                <Select.Option value='Info'>Info</Select.Option>
-                <Select.Option value='Error'>Error</Select.Option>
+                <Select.Option value='All'>همه</Select.Option>
+                <Select.Option value='Info'>اطلاعات</Select.Option>
+                <Select.Option value='Error'>خطا</Select.Option>
               </Select>
 
               <Button
                 size="small"
                 onClick={this.props.clearLogs}
               >
-                Clear
+                پاک کن
               </Button>
             </div>
           ) : null}
@@ -311,7 +311,7 @@ class DashboardBottom extends React.Component {
               size="small"
               onClick={this.props.clearScreenshots}
             >
-              Clear
+              پاک کن
             </Button>
           ) : null}
 
