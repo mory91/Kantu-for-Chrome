@@ -66,7 +66,19 @@ const availableCommands = [
   'storeValue',
   'assertValue',
   'verifyValue',
-  'captureEntirePageScreenshot'
+  'captureEntirePageScreenshot',
+  'assertEqual',
+  'assertNotEqual',
+  'assertTrue',
+  'assertAlert',
+  'assertChecked',
+  'assertElementPresent',
+  'assertSelectedValue',
+  'containsString',
+  'checkIfPersian',
+  'checkLength',
+  'greaterThan',
+  'lessThan'
 ]
 
 availableCommands.sort()
