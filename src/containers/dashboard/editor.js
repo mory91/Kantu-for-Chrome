@@ -490,7 +490,7 @@ class DashboardEditor extends React.Component {
                     value={selectedCmd && selectedCmd.cmd}
                     onChange={(value) => this.onDetailChange('cmd', value)}
                     filterOption={(input, {key}) => key.toLowerCase().indexOf(input.toLowerCase()) === 0}
-                    style={{ width: '60%', marginRight: '10px' }}
+                    style={{ width: '60%', marginLeft: '10px' }}
                   >
                     {availableCommands.map(cmd => (
                       <Select.Option value={cmd} key={cmd}>
@@ -509,7 +509,7 @@ class DashboardEditor extends React.Component {
                     {!selectedCmd || !selectedCmd.targetOptions ||
                       !selectedCmd.targetOptions.length ? (
                       <Input
-                        style={{ width: '60%', marginRight: '10px' }}
+                        style={{ width: '60%', marginLeft: '10px' }}
                         placeholder="target"
                         disabled={!isCmdEditable}
                         value={selectedCmd && selectedCmd.target}
@@ -517,7 +517,7 @@ class DashboardEditor extends React.Component {
                       />
                     ) : (
                       <Select
-                        style={{ width: '60%', marginRight: '10px' }}
+                        style={{ width: '60%', marginLeft: '10px' }}
                         placeholder="target"
                         disabled={!isCmdEditable}
                         value={selectedCmd.target}
@@ -534,7 +534,7 @@ class DashboardEditor extends React.Component {
                       </Select>
                     )}
                     <Button
-                      style={{ marginRight: '10px' }}
+                      style={{ marginLeft: '10px' }}
                       disabled={!isCmdEditable}
                       onClick={this.onToggleInspect}
                     >

@@ -62,7 +62,7 @@ class Sidebar extends React.Component {
         style={{ minWidth: this.getSideBarMinWidth() }}
       >
         <div className="sidebar-inner">
-          <Tabs defaultActiveKey="test_cases">
+          <Tabs  animated={false} defaultActiveKey="test_cases">
             <Tabs.TabPane tab="تست کیس ها" key="test_cases">
               <SidebarTestCases />
             </Tabs.TabPane>

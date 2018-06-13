@@ -20,6 +20,7 @@ body {
   left: 0;
   right: 0;
   display: flex;
+  direction: rtl;
   flex-direction: column;
 
   .app-inner {

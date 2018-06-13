@@ -10,7 +10,7 @@ $bgRunning: #d5d6f9;
   flex: 1;
   min-width: 260px;
   height: 100%;
-  border-right: 2px solid #ccc;
+  border-left: 2px solid #ccc;
 
   .sidebar-inner {
     position: absolute;
@@ -125,7 +125,7 @@ $bgRunning: #d5d6f9;
 
         .test-suite-title {
           flex: 1;
-          margin-left: 10px;
+          margin-right: 10px;
         }
         
         .more-button {
@@ -200,7 +200,7 @@ $bgRunning: #d5d6f9;
 
   .context-menu {
     z-index: 10;
-    
+    position: fixed!important;
     .ant-menu {
       border: '1px solid #ccc';
       border-radius: 4px;

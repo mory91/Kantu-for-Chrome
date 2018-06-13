@@ -555,7 +555,7 @@ class SidebarTestCases extends React.Component {
     return (
       <div>
         <div className="test-case-actions">
-          <Button type="primary" onClick={this.addTestCase}>+ تست کیس</Button>
+          <Button type="primary" onClick={this.addTestCase}>تست کیس +</Button>
           <Dropdown overlay={this.renderTestCaseMenu()} trigger={['click']}>
             <Button shape="circle">
               <Icon type="setting" />

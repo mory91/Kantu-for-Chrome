@@ -9,7 +9,8 @@ import csIpc from './common/ipc/ipc_cs'
 import Header from './components/header'
 import Sidebar from './containers/sidebar'
 import DashboardPage from './containers/dashboard'
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.css'
+import './antd-rtl.css'
 import './app.scss'
 
 class App extends Component {
